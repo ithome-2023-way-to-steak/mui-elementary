@@ -13,6 +13,14 @@ const baseConfig = createTheme({
       xl: 1440,
     },
   },
+  palette: {
+    neutral: {
+      light: '#c1c5d1',
+      main: '#a3a7b3',
+      dark: '#797d88',
+      contrastText: '#fff',
+    },
+  },
 });
 
 const theme = createTheme(baseConfig, {
@@ -23,6 +31,27 @@ const theme = createTheme(baseConfig, {
         variant: 'contained',
       },
       styleOverrides: {
+        // size customized
+        sizeMontaBig: {
+          width: '100%',
+          padding: '12px 16px',
+          borderRadius: '8px',
+          fontSize: '16px',
+          [baseConfig.breakpoints.up('md')]: {
+            padding: '16px 24px',
+            borderRadius: '16px',
+            fontSize: '24px',
+          },
+        },
+        // variant customized
+        monta: {
+          backgroundColor: baseConfig.palette.neutral.main,
+          color: baseConfig.palette.neutral.contrastText,
+          '&:hover': {
+            backgroundColor: baseConfig.palette.neutral.dark,
+            color: baseConfig.palette.neutral.contrastText,
+          },
+        },
         contained: {
           [baseConfig.breakpoints.up('xs')]: {
             backgroundColor: baseConfig.palette.primary.main,
